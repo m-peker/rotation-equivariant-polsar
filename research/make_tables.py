@@ -100,22 +100,31 @@ print("  compare vs ten-seed table: largest shared-row difference %.2f pp" % _d)
 
 # ---------------- complexity ----------------
 ref = have[0][0]
+T40 = json.load(open("exp40_results.json")) if os.path.exists("exp40_results.json") else {}
+NAME40 = {"CV-MsAtViT": "CV-MsAtViT", "Equivariant": "Equivariant (ours)",
+          "Steerable": "Steerable (ours)", "CV-2DCNN": None}
 C = [r"\begin{table}[t]",
      r"\caption{Model complexity. MACs are real multiply-accumulates for one",
      r"$15\times15$ sample, counted by operator dispatch so that functional and",
      r"modular convolutions are treated alike; a module-hook estimator misses the",
      r"functional calls in our group-convolutional layers and under-reports them",
-     r"by an order of magnitude.}",
+     r"by an order of magnitude. The last column is wall time to classify every",
+     r"labelled pixel of Flevoland at batch 4096, and it does not track the MAC",
+     r"count: the discrete network moves $N$ times the memory per layer and is",
+     r"slow despite being cheaper in arithmetic than the transformer.}",
      r"\label{tab:complexity}", r"\centering", r"\small",
-     r"\begin{tabular}{lrr}", r"\toprule",
-     r"model & parameters & MMACs \\", r"\midrule"]
+     r"\begin{tabular}{lrrr}", r"\toprule",
+     r"model & parameters & MMACs & full scene (s) \\", r"\midrule"]
 for m in ORDER:
     key = ref + "|" + m
     if key not in R or R[key]["params"] == 0:
         continue
-    C.append("%s & %s & %.2f \\\\" % (PRETTY.get(m, m),
-                                      "{:,}".format(R[key]["params"]).replace(",", r"\,"),
-                                      R[key]["macs"] / 1e6))
+    t = T40.get(NAME40.get(m) or "", {}).get("seconds")
+    C.append("%s & %s & %.2f & %s \\\\"
+             % (PRETTY.get(m, m),
+                "{:,}".format(R[key]["params"]).replace(",", r"\,"),
+                R[key]["macs"] / 1e6,
+                ("%.1f" % t) if t else "--"))
 C += [r"\bottomrule", r"\end{tabular}", r"\end{table}"]
 open(os.path.join(OUT, "tab_complexity.tex"), "w").write("\n".join(C) + "\n")
 

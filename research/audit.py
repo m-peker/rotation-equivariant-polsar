@@ -294,7 +294,8 @@ checks = [("per-class accuracy table", r"per-class"),
           ("training-ratio / budget sweep", r"labels per\s+class|label budget"),
           ("patch-size ablation", r"[Pp]atch size"),
           ("ablation of own components", r"subsection\{Ablation"),
-          ("runtime / inference cost", r"inference time|runtime|throughput|training time"),
+          ("runtime / inference cost",
+           r"inference time|runtime|throughput|training time|[Ww]all time"),
           ("code availability statement", r"code (is )?availab|github|will be released")]
 for nm, pat in checks:
     ok = re.search(pat, TEX) is not None
