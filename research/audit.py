@@ -210,7 +210,7 @@ if os.path.exists("exp27_results.json"):
     st = max((lambda m: m[0] - min(m))(E15["%s|Steerable" % s]["mean"])
              for s in ("flevoland", "sanfran", "ober"))
     claim("discrete network worst drop, any scene",
-          r"to \\SI\{([\d.]+)\}\{pp\} for the\s*\n?discrete network", eq)
+          r"to \\SI\{([\d.]+)\}\{pp\}\. The steerable network gives up", eq)
     print("  %-52s data %.2f  (prose: exactly 0.00)"
           % ("steerable worst drop, any scene", st))
     if st != 0.0:

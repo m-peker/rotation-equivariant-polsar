@@ -32,9 +32,12 @@ def g(tag, th="0"):
 
 
 L = [r"\begin{table}[t]",
-     r"\caption{Ablation on Flevoland, three seeds, 133 labels per class unless",
-     r"stated. OA$_{10}$ is accuracy after a \ang{10} rotation, an angle off the",
-     r"$N{=}8$ group grid, and OA$_{45}$ after an on-grid \ang{45} rotation.}",
+     r"\caption{Ablation on Flevoland, 133 labels per class unless stated.",
+     r"OA$_{10}$ is accuracy after a \ang{10} rotation, an angle off the",
+     r"$N{=}8$ group grid, and OA$_{45}$ after an on-grid \ang{45} rotation.",
+     r"The first four blocks vary the discrete network at three seeds; the last",
+     r"varies the steerable network at five, so the two are comparable within a",
+     r"block but not across.}",
      r"\label{tab:ablation}", r"\centering", r"\small",
      r"\begin{tabular}{llrrr}", r"\toprule",
      r"axis & setting & OA & OA$_{10}$ & OA$_{45}$ \\", r"\midrule"]
@@ -63,6 +66,24 @@ L.append(r"\multirow{5}{*}{labels/class}")
 for bg in (10, 25, 50, 133, 300):
     t = "D|budget=%d" % bg
     L.append(" & %d & %.2f & %.2f & %.2f \\\\" % (bg, g(t), g(t, "10"), g(t, "45")))
+
+# The steerable network's own components (Exp. 37). Separated because these are
+# five seeds and vary the steerable construction rather than the discrete one;
+# the numbers above vary the discrete network at three seeds.
+if os.path.exists("exp37_results.json"):
+    S37 = json.load(open("exp37_results.json"))
+    rows = [("gate: invariant (ours)", "invariant gate"),
+            ("gate: norm non-lin.", "norm non-lin."),
+            ("gate: none (linear)", "no non-lin."),
+            ("readout: no rel. phase", "no rel.\\ phase"),
+            ("readout: invariants only", "invariants only")]
+    have = [(k, nm) for k, nm in rows if k in S37]
+    if have:
+        L.append(r"\midrule")
+        L.append(r"\multirow{%d}{*}{steerable}" % len(have))
+        for k, nm in have:
+            v = S37[k]["mean"]
+            L.append(" & %s & %.2f & %.2f & %.2f \\\\" % (nm, v[0], v[1], v[2]))
 L += [r"\bottomrule", r"\end{tabular}", r"\end{table}"]
 open(os.path.join(OUT, "tab_ablation.tex"), "w").write("\n".join(L) + "\n")
 
