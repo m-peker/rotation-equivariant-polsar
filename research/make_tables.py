@@ -120,8 +120,11 @@ for m in ORDER:
     if key not in R or R[key]["params"] == 0:
         continue
     t = T40.get(NAME40.get(m) or "", {}).get("seconds")
+    # This table lives in the supplement, which carries no bibliography of its
+    # own; a \cite here would drag all 45 entries in for one reference.
+    nm = PRETTY.get(m, m).split("~\\cite")[0]
     C.append("%s & %s & %.2f & %s \\\\"
-             % (PRETTY.get(m, m),
+             % (nm,
                 "{:,}".format(R[key]["params"]).replace(",", r"\,"),
                 R[key]["macs"] / 1e6,
                 ("%.1f" % t) if t else "--"))

@@ -48,10 +48,10 @@ research/
   audit.py           re-derives every quantitative claim in the manuscript
 ```
 
-The manuscript itself is not in this repository. It is under review, and the
-LaTeX sources, the generated tables and the built PDFs are kept locally until it
-is published; they will be added here at that point. What is public is
-everything needed to reproduce the measurements the manuscript reports.
+The manuscript itself is not in this repository. It is in preparation for
+submission, and the LaTeX sources, the generated tables and the built PDFs are
+kept locally until it is published; they will be added here at that point. What
+is public is everything needed to reproduce the measurements it reports.
 
 ## Reproducing
 

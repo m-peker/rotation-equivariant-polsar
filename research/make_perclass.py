@@ -110,3 +110,37 @@ for sc in CLASSES:
         f = F["%s|%s" % (sc, a)]
         print("%-16s %-22s %-12s %6.2f %7.2f"
               % (sc, a, f["worst_class"], f["worst"], f["spread"]))
+
+# ---- the theta = 45 breakdown the supplement discusses --------------------
+# The text describes classes going to exactly zero under rotation, but the two
+# tables above are theta = 0 only, so the paragraph could not be checked against
+# anything. Exp. 26 measured it; this puts it in a table.
+E26 = json.load(open("exp26_results.json"))
+A26 = [("baseline", "CV-CNN"), ("baseline + rot. aug.", r"CV-CNN$^{\dagger}$"),
+       ("Equivariant", "Equivariant")]
+L = [r"\begin{table}[!t]", r"\centering", r"\footnotesize",
+     r"\setlength{\tabcolsep}{3.5pt}",
+     r"\caption{PER-CLASS ACCURACY (\%) ON FLEVOLAND AT $\theta=0$ AND "
+     r"$\theta=\ang{45}$, MEAN OF THREE SEEDS. THE COLLAPSE IS A CLASS-LEVEL "
+     r"EVENT: FIVE CLASSES GO TO EXACTLY ZERO AND TWO MORE BELOW ONE PER CENT, "
+     r"WHILE BEET AND POTATOES BARELY MOVE.}",
+     r"\label{tab:perclass_rot}",
+     r"\begin{tabular}{l" + "rr" * len(A26) + "}", r"\hline",
+     " & ".join([""] + [r"\multicolumn{2}{c}{%s}" % lab for _, lab in A26]) + r" \\",
+     "Class & " + " & ".join([r"$0$ & \ang{45}"] * len(A26)) + r" \\", r"\hline"]
+for i, cl in enumerate(CLASSES["flevoland"]):
+    cells = []
+    for k, _ in A26:
+        cells.append("%.2f" % E26[k]["0.0"]["per"][i])
+        v = E26[k]["45.0"]["per"][i]
+        cells.append((r"\textbf{%.2f}" if v < 1.0 else "%.2f") % v)
+    L.append(cl + " & " + " & ".join(cells) + r" \\")
+L.append(r"\hline")
+oa = []
+for k, _ in A26:
+    oa += ["%.2f" % E26[k]["0.0"]["oa"], "%.2f" % E26[k]["45.0"]["oa"]]
+L.append(r"\textit{OA} & " + " & ".join(oa) + r" \\")
+L += [r"\hline", r"\end{tabular}", r"\end{table}"]
+open("../paper/tables/tab_perclass_rot.tex", "w", encoding="utf-8").write(
+    "\n".join(L) + "\n")
+print("wrote paper/tables/tab_perclass_rot.tex")
