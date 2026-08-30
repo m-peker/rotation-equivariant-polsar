@@ -1,0 +1,60 @@
+{
+ "flip45": [
+  52.5,
+  52.1,
+  57.5,
+  39.3,
+  37.8,
+  33.5,
+  41.9,
+  40.9,
+  36.1
+ ],
+ "flip45_min": 33.5,
+ "flip45_max": 57.5,
+ "flip10_max": 3.7,
+ "inv_max": 2.0209598972087406e-07,
+ "field_sd": {
+  "flevoland": 2.5,
+  "sanfran": 5.95,
+  "ober": 2.03
+ },
+ "field_sigma": {
+  "flevoland": 4.5,
+  "sanfran": 11.0,
+  "ober": 6.5
+ },
+ "drop20_flevoland": {
+  "baseline": 21.47,
+  "baseline + rot. aug.": 0.05,
+  "CV-CNN + OAC": 5.66,
+  "Equivariant": 0.17,
+  "Steerable": 0.51
+ },
+ "drop20_sanfran": {
+  "baseline": 20.76,
+  "baseline + rot. aug.": 0.16,
+  "CV-CNN + OAC": 2.82,
+  "Equivariant": 0.29,
+  "Steerable": 0.1
+ },
+ "drop20_ober": {
+  "baseline": 37.59,
+  "baseline + rot. aug.": 0.08,
+  "CV-CNN + OAC": 19.55,
+  "Equivariant": 0.23,
+  "Steerable": 0.3
+ },
+ "crossacq": {
+  "baseline": 0.43,
+  "baseline + rot. aug.": 0.18,
+  "CV-CNN + OAC": 0.43,
+  "Equivariant": 0.28,
+  "Steerable": 0.49
+ },
+ "crossacq_orient": {
+  "median_abs": 1.028,
+  "sd": 2.435,
+  "frac_gt5": 0.053
+ }
+}

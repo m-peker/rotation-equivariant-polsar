@@ -1,0 +1,32 @@
+{
+ "air_gz_oa_gap": 1.47,
+ "air_gz_aa_gap": 1.42,
+ "air_gz_msat_drop": 29.52,
+ "air_gz_eq_drop": 0.0,
+ "air_gz_st_drop": 0.0,
+ "air_sh_oa_gap": -0.14,
+ "air_sh_aa_gap": -0.1,
+ "air_sh_msat_drop": 27.42,
+ "air_sh_eq_drop": 0.0,
+ "air_sh_st_drop": 0.0,
+ "air_bj_oa_gap": 0.32,
+ "air_bj_aa_gap": -0.52,
+ "air_bj_msat_drop": 40.01,
+ "air_bj_eq_drop": 0.87,
+ "air_bj_st_drop": 0.0,
+ "kmax4": [
+  95.62,
+  285871,
+  0.0
+ ],
+ "kmax6": [
+  93.06,
+  449527,
+  0.0
+ ],
+ "kmax8": [
+  94.67,
+  675391,
+  0.0
+ ]
+}

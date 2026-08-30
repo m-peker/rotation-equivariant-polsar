@@ -1,0 +1,128 @@
+{
+ "flevoland|baseline no-aug": {
+  "clean": 97.54,
+  "worst": 44.15,
+  "drop": 53.39,
+  "clean_vs_base": 0.0
+ },
+ "flevoland|baseline rot-AUG": {
+  "clean": 94.08,
+  "worst": 94.06,
+  "drop": 0.02,
+  "clean_vs_base": -3.47
+ },
+ "flevoland|OAC-pixel": {
+  "clean": 95.97,
+  "worst": 50.78,
+  "drop": 45.19,
+  "clean_vs_base": -1.58
+ },
+ "flevoland|OAC-patch": {
+  "clean": 95.14,
+  "worst": 65.23,
+  "drop": 29.91,
+  "clean_vs_base": -2.41
+ },
+ "flevoland|OAC-smooth": {
+  "clean": 97.28,
+  "worst": 61.77,
+  "drop": 35.5,
+  "clean_vs_base": -0.27
+ },
+ "flevoland|Equivariant": {
+  "clean": 97.35,
+  "worst": 97.35,
+  "drop": 0.0,
+  "clean_vs_base": -0.19
+ },
+ "flevoland|Steerable": {
+  "clean": 95.0,
+  "worst": 95.0,
+  "drop": 0.0,
+  "clean_vs_base": -2.54
+ },
+ "sanfran|baseline no-aug": {
+  "clean": 95.91,
+  "worst": 36.21,
+  "drop": 59.7,
+  "clean_vs_base": 0.0
+ },
+ "sanfran|baseline rot-AUG": {
+  "clean": 95.26,
+  "worst": 95.05,
+  "drop": 0.21,
+  "clean_vs_base": -0.65
+ },
+ "sanfran|OAC-pixel": {
+  "clean": 95.59,
+  "worst": 63.88,
+  "drop": 31.71,
+  "clean_vs_base": -0.32
+ },
+ "sanfran|OAC-patch": {
+  "clean": 95.05,
+  "worst": 80.31,
+  "drop": 14.74,
+  "clean_vs_base": -0.86
+ },
+ "sanfran|OAC-smooth": {
+  "clean": 95.73,
+  "worst": 77.37,
+  "drop": 18.36,
+  "clean_vs_base": -0.18
+ },
+ "sanfran|Equivariant": {
+  "clean": 95.35,
+  "worst": 94.93,
+  "drop": 0.42,
+  "clean_vs_base": -0.56
+ },
+ "sanfran|Steerable": {
+  "clean": 95.25,
+  "worst": 95.25,
+  "drop": 0.0,
+  "clean_vs_base": -0.67
+ },
+ "ober|baseline no-aug": {
+  "clean": 95.71,
+  "worst": 33.73,
+  "drop": 61.98,
+  "clean_vs_base": 0.0
+ },
+ "ober|baseline rot-AUG": {
+  "clean": 94.77,
+  "worst": 94.77,
+  "drop": 0.0,
+  "clean_vs_base": -0.94
+ },
+ "ober|OAC-pixel": {
+  "clean": 95.47,
+  "worst": 88.08,
+  "drop": 7.39,
+  "clean_vs_base": -0.24
+ },
+ "ober|OAC-patch": {
+  "clean": 95.35,
+  "worst": 86.96,
+  "drop": 8.39,
+  "clean_vs_base": -0.35
+ },
+ "ober|OAC-smooth": {
+  "clean": 95.43,
+  "worst": 88.31,
+  "drop": 7.12,
+  "clean_vs_base": -0.28
+ },
+ "ober|Equivariant": {
+  "clean": 95.23,
+  "worst": 95.01,
+  "drop": 0.22,
+  "clean_vs_base": -0.47
+ },
+ "ober|Steerable": {
+  "clean": 95.35,
+  "worst": 95.35,
+  "drop": 0.0,
+  "clean_vs_base": -0.36
+ }
+}

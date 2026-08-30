@@ -1,0 +1,55 @@
+# ---- data -------------------------------------------------------------
+# The scenes are third-party and large (13 GB). See README for where to get
+# them and where to put them.
+Datasets/
+research/air_cache/
+
+# ---- third-party code -------------------------------------------------
+# The original CV-MsAtViT implementation is the authors' own; we link to it
+# rather than redistribute it. research/cvmsatvit.py is our reimplementation.
+/CoordAttention.py
+/Load_Data.py
+/SAR_utils.py
+/main_CV_MsAtViT.py
+/net_flops.py
+/README_original.md
+
+# ---- private ----------------------------------------------------------
+paper/Review/
+research/1-s2.0-*.pdf
+research/RESUME.md
+
+# ---- working files ----------------------------------------------------
+research/snapshots/
+research/*.log
+research/figs/
+paper/main_18pp_backup.tex
+paper/main_text.txt
+paper/refs_v1_backup.tex
+paper/figs_tikz/fig_arch_v1.*
+paper/IEEE-Transactions-LaTeX2e-templates-and-instructions/
+
+# ---- build artefacts --------------------------------------------------
+*.aux
+*.log
+*.out
+*.toc
+*.bbl
+*.blg
+*.synctex.gz
+__pycache__/
+*.pyc
+*.npy
+*.npz
+
+# figure previews and unused renders: the manuscript uses the PDFs only
+research/paper_figs/*.png
+research/paper_figs/fig1_scene.*
+research/paper_figs/fig6_maps_orig.pdf
+
+# extracted text of third-party papers, kept locally for reference only
+research/cvmsatvit_text.txt
+research/doc.txt
+
+# The manuscript is not public until it is published. Kept local only.
+paper/

@@ -1,0 +1,108 @@
+{
+ "flevoland|baseline": {
+  "worst_class": "Potatoes",
+  "worst": 93.19,
+  "spread": 6.81,
+  "oa": 97.29,
+  "aa": 97.67
+ },
+ "flevoland|baseline + rot. aug.": {
+  "worst_class": "Rapeseed",
+  "worst": 86.27,
+  "spread": 13.73,
+  "oa": 94.69,
+  "aa": 95.28
+ },
+ "flevoland|Equivariant": {
+  "worst_class": "Potatoes",
+  "worst": 93.1,
+  "spread": 6.9,
+  "oa": 97.08,
+  "aa": 97.55
+ },
+ "flevoland|Steerable": {
+  "worst_class": "Beet",
+  "worst": 85.09,
+  "spread": 14.81,
+  "oa": 95.35,
+  "aa": 96.02
+ },
+ "flevoland|CV-MsAtViT": {
+  "worst_class": "Rapeseed",
+  "worst": 94.64,
+  "spread": 5.32,
+  "oa": 97.86,
+  "aa": 98.21
+ },
+ "sanfran|baseline": {
+  "worst_class": "Urban",
+  "worst": 94.39,
+  "spread": 4.69,
+  "oa": 95.88,
+  "aa": 96.62
+ },
+ "sanfran|baseline + rot. aug.": {
+  "worst_class": "Vegetation",
+  "worst": 92.37,
+  "spread": 5.44,
+  "oa": 95.23,
+  "aa": 95.62
+ },
+ "sanfran|Equivariant": {
+  "worst_class": "Urban",
+  "worst": 93.7,
+  "spread": 5.1,
+  "oa": 95.41,
+  "aa": 96.24
+ },
+ "sanfran|Steerable": {
+  "worst_class": "Vegetation",
+  "worst": 92.17,
+  "spread": 6.01,
+  "oa": 95.16,
+  "aa": 95.58
+ },
+ "sanfran|CV-MsAtViT": {
+  "worst_class": "Urban",
+  "worst": 95.33,
+  "spread": 3.88,
+  "oa": 96.61,
+  "aa": 97.2
+ },
+ "ober|baseline": {
+  "worst_class": "Built-up",
+  "worst": 93.32,
+  "spread": 3.28,
+  "oa": 95.66,
+  "aa": 95.44
+ },
+ "ober|baseline + rot. aug.": {
+  "worst_class": "Built-up",
+  "worst": 91.69,
+  "spread": 4.18,
+  "oa": 94.71,
+  "aa": 94.42
+ },
+ "ober|Equivariant": {
+  "worst_class": "Built-up",
+  "worst": 92.16,
+  "spread": 4.13,
+  "oa": 95.16,
+  "aa": 94.75
+ },
+ "ober|Steerable": {
+  "worst_class": "Built-up",
+  "worst": 92.36,
+  "spread": 4.02,
+  "oa": 95.34,
+  "aa": 95.03
+ },
+ "ober|CV-MsAtViT": {
+  "worst_class": "Built-up",
+  "worst": 93.73,
+  "spread": 3.5,
+  "oa": 95.68,
+  "aa": 95.66
+ },
+ "max_class_sd": 4.99
+}

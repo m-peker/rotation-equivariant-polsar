@@ -1,0 +1,11 @@
+{
+ "steer_params": 285871,
+ "steer_c0": 16,
+ "steer_c": 24,
+ "steer_k": 3,
+ "steer_head_in": 1008,
+ "steer_hidden": 128,
+ "steer_blocks": 3,
+ "disc_params": 280703,
+ "disc_N": 8
+}
